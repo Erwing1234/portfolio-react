@@ -7,15 +7,13 @@ import "./App.css";
 
 
 function App() {
-  const [name,setName] = useState("");
-const [email,setEmail] = useState("");
-const [message,setMessage] = useState("");
+
+  const [message,setMessage] = useState("");
 
 const sendMessage = async (e) => {
   e.preventDefault();
 
-  await axios.post("http://localhost:5000/send-email",{
-    name,
+  await axios.post("https://ton-api.onrender.com/send-email",{
     email,
     message
   });
